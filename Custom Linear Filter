@@ -1,0 +1,51 @@
+#include "opencv2/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
+
+using namespace cv;
+
+int main ( int argc, char** argv )
+{
+    
+    Mat source, dst;
+
+    Mat kernel;
+    Point anchor;
+    double delta;
+    int ddepth;
+    int kernel_size;
+    const char* window_name = "filter2D";
+
+    source = imread( imageName, IMREAD_COLOR ); 
+
+    if( source.empty() )
+    {
+        printf(" Error opening image\n");
+        return -1;
+    }
+
+    // Initialize arguments for the filter
+    anchor = Point( -1, -1 );
+    delta = 0;
+    ddepth = -1;
+	
+    int ind = 0;
+    for(;;)
+    {
+        kernel_size = 3 + 2*( ind%5 );
+        kernel = Mat::ones( kernel_size, kernel_size, CV_32F )/ (float)(kernel_size*kernel_size);
+      
+        filter2D(source, dst, ddepth , kernel, anchor, delta, BORDER_DEFAULT );
+        
+        imshow( window_name, dst );
+
+        char * c= (char)waitKey(3000);
+        // Press 'ESC' to exit the program
+        if(c==27) break;
+      
+
+        ind++;
+    }
+
+    return 0;
+}
