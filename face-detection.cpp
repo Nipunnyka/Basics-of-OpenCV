@@ -1,3 +1,17 @@
+/*
+            FACE DETECTION USING HAAR CASCADES
+ -tree based object detection technique
+  At all scales, haar like features form the “raw material” that will be used by the boosted clas‐sifiers.
+  They  all  have  the  feature  that  they  can  be  rapidly  computed  from  an  integralimage.
+ 
+    step 1: read image
+    step 2: load required xml classifiers
+    step 3: define list "faces" of type rect
+    step 4: use cascade to detect face like feature in image
+    step 5: output image with the detected face encircled
+
+*/
+
 #include <opencv2/objdetect.hpp>
 #include <iostream>
 #include <opencv2/imgproc/imgproc.hpp>
