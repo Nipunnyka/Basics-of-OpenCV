@@ -1,3 +1,18 @@
+/*
+        HOW FILTERS WORK
+ Essentially, a filter is an algo that starts with one image I and ends up with another I' by
+ performing some operation on every (x,y) of I. Linear filters work by convlving the image with
+ a specified kernel.
+ Gaussian Filter work with a gaussian kernel that basically tries to remove the starkness of an image
+ by finding a gaussian approximate of the pixel as compared to its neighbours.
+ 
+ step 1: load image
+ step 2: apply gaussblur
+ step 3: display image
+
+*/
+
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -17,6 +32,7 @@ int main(int argc, char *argv[])
 
     Mat imgblur;
     GaussianBlur(img, imgblur, cv::Size(5,5),   0);                     //applying gaussain filter
+                                                                        //specified size is the size of kernel
 
     namedWindow("arnold_schwarzenegger", CV_WINDOW_AUTOSIZE );          //window for orig img
     imshow("arnold_schwarzenegger", img);                               //show orig img
@@ -30,5 +46,6 @@ int main(int argc, char *argv[])
     return 0;
 
 }
+
 
 
