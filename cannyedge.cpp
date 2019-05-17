@@ -1,3 +1,18 @@
+/*
+            CANNY ALGO FOR EDGE DETECTION
+-first  derivatives  are  computed  in  x  and  y  and  then  com‐bined into four directional derivatives.
+-the points where these directional derivativesare local maxima are then candidates for assembling into edges. 
+-The most significant dimension to  the  Canny  algorithm  is  this  phase  in  which  it  assembles  the  individual edge-candidate pixels into contours.
+-the function only accepts grayscale images
+
+step 1: Read image
+step 2: Convert image to grayscale
+step 3: Apply canny algo to this grayscale image
+step 4: output the image with edges
+
+*/
+
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
