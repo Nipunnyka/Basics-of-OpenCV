@@ -1,3 +1,21 @@
+/*
+                MORPHOLOGY OF AN IMAGE
+Given morhphological transformations: erosion, dilation, opening and closing
+dilation- deacreases white contect around edges
+erosion- increases white content around edges
+opening- erosion then dilation
+closing- dilaton then erosion
+
+Dilation and Erosion functions require a structuring element.
+
+step 1: read image
+step 2: statically input the degree to which youl would the like the erosion or dilation to take place
+step 3: determine the structuring element
+step 4: input what operation the user wants
+step 5: perform that operation as per given instruction
+
+*/
+
 
 #include "opencv2/imgproc.hpp"
 #include "opencv2/highgui.hpp"
